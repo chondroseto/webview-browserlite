@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+        android:id="@+id/fg_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/hide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/menu_open"
+                    android:layout_gravity="center"
+                    android:background="@color/transparant"
+                    android:onClick="ex_menu"
+                    android:layout_margin="10dp"/>
+
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="50dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:selectAllOnFocus="true"
+            android:hint="Enter URL"
+            android:inputType="textWebEditText"
+            android:textSize="13sp"
+            android:background="@drawable/edit_text_custom"
+            android:layout_margin="10dp"/>
+
+            </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/refresh"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="13dp"
+            android:visibility="gone"
+            android:background="@color/transparant"
+            android:onClick="refresh_btn"
+            android:src="@drawable/refresh_icon" />
+
+        <ImageButton
+            android:id="@+id/stop"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="13dp"
+            android:visibility="gone"
+            android:onClick="stop_btn"
+            android:background="@color/transparant"
+            android:src="@drawable/icon_stop" />
+
+    </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/bg_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:weightSum="5"
+            android:visibility="gone">
+
+            <ImageButton
+                android:id="@+id/fullscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="fullscreen_btn"
+                android:background="@color/transparant"
+                android:src="@drawable/icon_fullscreen" />
+
+
+            <ImageButton
+                android:id="@+id/link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="link_btn"
+                android:background="@color/transparant"
+                android:src="@drawable/icon_link" />
+
+            <ImageButton
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="home_btn"
+                android:background="@color/transparant"
+                android:src="@drawable/home_icon" />
+
+            <ImageButton
+                android:id="@+id/forward_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="forward_btn"
+                android:background="@color/transparant"
+                android:src="@drawable/forward_arrow" />
+
+            <ImageButton
+                android:id="@+id/history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="history_btn"
+                android:background="@color/transparant"
+                android:src="@drawable/history_icon" />
+
+        </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:visibility="invisible"/>
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_gesture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.01">
+
+            <WebView
+                android:layout_weight="0.01"
+                android:id="@+id/web_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:background="@drawable/border">
+            </WebView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="0.98"
+        android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/miniscreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:onClick="miniscreen_btn"
+        android:background="@drawable/btn_miniscreen_custom"
+        android:src="@drawable/icon_miniscreen" />
+
+
+</RelativeLayout>
